@@ -1,0 +1,59 @@
+<!-- File : jobs_in_england.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid #999;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13pt;
+            font-weight: normal;
+            width: 100%;
+            caption-side: top;
+        }
+        th {
+            background-color:#2A72BA;
+            padding: 1em 1em; 
+            text-align: center;
+        }
+        td {
+            background-color: azure;
+            padding: 0.5em 0.5em; 
+            text-align: left;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membaca File Json Job</title>
+    <!-- Import library JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- Kode javaScript -->
+    <script type="text/javascript">
+        $(function(){
+            // Mengambil daata dari file headline.txt dengan fungsi $.get() JQuery
+            $.get("hasilscrapingjobs.json", function(obj) {
+                var str = "<table border=1>";
+                str += "<tr><th>No</th><th>Job Title Announced</th><th>Company</th><th>Location</th><th>Posted at</th><th>Di scrapping pada</td></tr>";
+                $.each(obj, function(n, data) {
+                    str += "<tr><td>"+(n+1)+"</td>";
+                    str += "<td>"+data.Job_Title+"</td>";
+                    str += "<td>"+data.Company+"</td>";
+                    str += "<td>"+data.Location+"</td>";
+                    str += "<td>"+data.Posted+"</td>";
+                    str += "<td>"+data.Waktu_Scraping_Data+"</td></tr>";
+                });
+                str+="</table>";
+                $('#hasilscrapingjobs_json').html(str);
+            });
+        });
+    </script>
+</head>
+<body style="background-color: bisque; margin: 30px 30px;">
+    <h2><a href="https://rchm4tps.github.io/">Return to home page</a></h4>
+    <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 36pt;"> Job Vacation in England! </h1>
+    <div id="hasilscrapingjobs_json"></div>
+    <h2><a href="https://rchm4tps.github.io/">Return to home page</a></h4>
+</body>
+</html>
