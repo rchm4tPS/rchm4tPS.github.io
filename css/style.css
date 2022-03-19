@@ -216,9 +216,16 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-cover .display-tc .fh5co-social-icons li a {
   color: #fff;
 }
-#fh5co-header .display-tc .fh5co-social-icons li a i,
-.fh5co-cover .display-tc .fh5co-social-icons li a i {
+#fh5co-header .display-tc .fh5co-social-icons li a b,
+.fh5co-cover .display-tc .fh5co-social-icons li a b {
+  margin-right: 20px;
   font-size: 30px;
+}
+#fh5co-header .display-tc .fh5co-social-icons li a b:hover,
+.fh5co-cover .display-tc .fh5co-social-icons li a b:hover {
+  margin-right: 20px;
+  font-size: 30px;
+  background-color: #27ae60;
 }
 
 #fh5co-features {
